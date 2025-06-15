@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcee7w5nlh4dm"]
+
+[ext_resource type="Script" uid="uid://c07qnbp3dv0lx" path="res://scripts/flowchart.gd" id="1_usq4h"]
+[ext_resource type="PackedScene" uid="uid://dpve6wuncnw7k" path="res://scenes/flowchart_dialog.tscn" id="2_kykx8"]
+
+[node name="Flowchart" type="Node2D"]
+script = ExtResource("1_usq4h")
+
+[node name="FlowchartDialogue" parent="." instance=ExtResource("2_kykx8")]
+position = Vector2(110, 142)
+
+[node name="FlowchartDialogue2" parent="." instance=ExtResource("2_kykx8")]
+position = Vector2(477, 143)
+
+[node name="FlowchartDialogue3" parent="." instance=ExtResource("2_kykx8")]
+position = Vector2(827, 140)

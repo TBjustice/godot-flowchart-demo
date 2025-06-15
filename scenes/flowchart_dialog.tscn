@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpve6wuncnw7k"]
+
+[ext_resource type="Script" uid="uid://clu4ererpc2wq" path="res://scripts/flowchart_dialog.gd" id="1_m0ocb"]
+[ext_resource type="PackedScene" uid="uid://bsxedb358028o" path="res://scenes/flowchart_node.tscn" id="2_1wqil"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjrge"]
+bg_color = Color(0.13104, 0.0663, 0.39, 1)
+
+[node name="FlowchartDialogue" type="Node2D"]
+script = ExtResource("1_m0ocb")
+titlebar_path = NodePath("VBoxContainer/Title")
+metadata/_custom_type_script = "uid://b0figng74f0gr"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 240.0
+offset_bottom = 65.0
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tjrge")
+text = "Dialog"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Detail" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Detail"]
+layout_mode = 2
+placeholder_text = "Speaker"
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/Detail"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+placeholder_text = "Dialog"
+
+[node name="FlowchartNodeRight" parent="." groups=["FlowchartNodeRight"] instance=ExtResource("2_1wqil")]
+position = Vector2(250, 16)
+
+[node name="FlowchartNodeLeft" parent="." groups=["FlowchartNodeLeft"] instance=ExtResource("2_1wqil")]
+position = Vector2(-10, 16)

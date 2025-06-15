@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsxedb358028o"]
+
+[ext_resource type="Script" uid="uid://bcdre8aq4b1xk" path="res://scripts/flowchart_node.gd" id="1_l5b3v"]
+[ext_resource type="Texture2D" uid="uid://b20psytqrf7cj" path="res://circle.png" id="1_lsw1a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5b3v"]
+radius = 12.0416
+
+[node name="FlowchartNode" type="Area2D" groups=["FlowchartNode"]]
+script = ExtResource("1_l5b3v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l5b3v")
+
+[node name="Circle" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_lsw1a")
